@@ -49,7 +49,13 @@ body {
 
 .hi:hover::before {
   transform: scaleX(1);
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hi:hover {
+  filter: drop-shadow(0 0 10px #fffdef);
+  transition: all 0.1s ease;
+  transform: scale(1.05);
 }
 
 .card {
@@ -109,4 +115,81 @@ p {
 .weatherEmoji {
   font-size: 5rem;
   margin-bottom: 20px;
+}
+
+.unitSwitcher {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+.unitButton {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  border: none;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, hsl(229, 74%, 65%), hsl(228, 100%, 90%));
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+}
+
+.unitButton:hover {
+  filter: drop-shadow(0 0 10px #fffdef);
+  transition: all 0.1s ease;
+  transform: scale(1.05);
+}
+
+.unitButton:hover::after,
+.unitButton:hover::before {
+  animation-play-state: paused;
+  background-image: linear-gradient(
+    135deg,
+    hsl(229, 74%, 65%),
+    hsl(228, 100%, 90%)
+  );
+}
+
+.unitButton::after,
+.unitButton::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent,
+    hsl(229, 78%, 60%),
+    hsl(228, 43%, 53%),
+    hsl(228, 89%, 76%),
+    hsl(229, 78%, 60%)
+  );
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  border-radius: 1rem;
+  padding: 2px;
+  animation: 1.5s linear infinite spin;
+}
+
+.unitButton::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
 }
