@@ -11,6 +11,23 @@ let tempCelsius = "";
 let tempFahrenheit = "";
 let tempKelvin = "";
 
+document.addEventListener("DOMContentLoaded", () => {
+  const screenWidth = window.screen.width;
+  let celsiusText = document.getElementById("celsius");
+  let fahrenheitText = document.getElementById("fahrenheit");
+  let kelvinText = document.getElementById("kelvin");
+  console.log(screenWidth);
+  if (screenWidth <= 382) {
+    celsiusText.textContent = "° C";
+    fahrenheitText.textContent = "° F";
+    kelvinText.textContent = "K";
+  } else {
+    celsiusText.textContent = "Celsius";
+    fahrenheitText.textContent = "Fahrenheit";
+    kelvinText.textContent = "Kelvin";
+  }
+});
+
 const unitButtons = document.querySelectorAll(".unitButton");
 unitButtons.forEach((button) => {
   button.addEventListener("click", () => {

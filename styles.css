@@ -212,75 +212,96 @@ button.unitButton.isPressed {
 }
 
 @media screen and (max-width: 750px) {
-  .weatherForm {
-    display: flex;
-    flex-direction: column;
-  }
-}
-@media screen and (max-width: 480px) {
-  .weatherForm {
-    align-items: center;
-  }
   .cityInput {
     font-size: 1.5rem;
-    padding: 5px;
-    width: 85vw;
   }
   .hi {
     font-size: 1.5rem;
-    padding: 5px 10px;
-    width: 50vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cityInput {
+    font-size: 1.2rem;
+  }
+  .hi {
+    font-size: 1.2rem;
+  }
+
+  .unitButton {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cityInput,
+  .hi {
+    font-size: 1rem;
+  }
+
+  .unitButton {
+    font-size: 0.7;
+    margin: 0.2rem 0.5rem;
   }
   .card {
     padding: 20px;
-    min-width: 250px;
-  }
-  .weatherDisplay {
-    font-size: 5rem;
   }
 
-  .unitSwitcher {
-    display: flex;
-    justify-content: space-evenly;
-  }
-}
+  @media screen and (max-width: 450px) {
+    .cityInput {
+      font-size: 0.8rem;
+    }
+    .hi {
+      font-size: 0.8rem;
+    }
 
-@media screen and (max-width: 456px) {
-  .cityInput {
-    width: 80vw;
-  }
-  .hi {
-    width: max-content;
-  }
-  .card {
-    padding: 10px;
-    width: max-content;
-    text-align: center;
-  }
-  .weatherDisplay {
-    font-size: 4rem;
+    .unitButton {
+      font-size: 1.2rem;
+      padding: 5px 10px;
+    }
+
+    .card p {
+      font-size: 2.5rem;
+    }
   }
 
-  .unitSwitcher {
-    flex-direction: column;
-    align-items: center;
-  }
-  .unitButton {
-    margin: 1rem 0;
-    width: 50vw;
-    text-align: center;
-  }
-}
+  @media screen and (max-width: 382px) {
+    .weatherForm {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-@media (hover: none) {
-  .hi:hover,
-  .unitButton:hover {
-    transform: none;
-    filter: none;
-  }
+    .cityInput,
+    .hi {
+      width: 70vw;
+    }
 
-  .unitButton:hover::before,
-  .unitButton:hover::after {
-    animation-play-state: running;
+    .unitButton {
+      width: 25vw;
+      font-size: clamp(0.8rem, 4vw, 2.5rem);
+      overflow: hidden;
+    }
+
+    #cardDisplay {
+      width: 90vw;
+      padding: 20px;
+      margin: 0 auto;
+      box-sizing: border-box;
+      font-size: 0.5rem;
+      text-align: center;
+    }
+  }
+  @media (hover: none) {
+    .hi:hover,
+    .unitButton:hover {
+      transform: none;
+      filter: none;
+    }
+
+    .unitButton:hover::before,
+    .unitButton:hover::after {
+      animation-play-state: running;
+    }
   }
 }
