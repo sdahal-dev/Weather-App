@@ -217,3 +217,57 @@ button.unitButton.isPressed {
     flex-direction: column;
   }
 }
+@media screen and (max-width: 480px) {
+  .weatherForm {
+    align-items: center;
+  }
+  .cityInput {
+    font-size: 1.5rem;
+    padding: 5px;
+    width: 85vw;
+  }
+  .hi {
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    width: 50vw;
+  }
+  .card {
+    padding: 20px;
+    min-width: 250px;
+  }
+  .weatherDisplay {
+    font-size: 5rem;
+  }
+
+  .unitSwitcher {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 456px) {
+  .cityInput {
+    width: 80vw;
+  }
+  .hi {
+    max-width: max-content;
+  }
+  .card {
+    padding: 10px;
+    max-width: max-content;
+    text-align: center;
+  }
+  .weatherDisplay {
+    font-size: 4rem;
+  }
+
+  .unitSwitcher {
+    flex-direction: column;
+    align-items: center;
+  }
+  .unitButton {
+    margin: 1rem 0;
+    width: 50vw;
+    max-width: max-content;
+  }
+}
