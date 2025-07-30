@@ -197,8 +197,9 @@ p {
 button.unitButton.isPressed {
   filter: drop-shadow(0 0 10px #62ec75);
   transition: all 0.1s ease;
-  transform: scale(1.05);
+  transform: scale(1.1);
   animation-play-state: paused;
+  border: 2px solid #fff;
 }
 
 .unitButton.isPressed::after,
@@ -303,5 +304,20 @@ button.unitButton.isPressed {
     .unitButton:hover::after {
       animation-play-state: running;
     }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .unitButton:hover,
+  button.unitButton.isPressed {
+    filter: none;
+    transform: scale(1.1);
+  }
+
+  .unitButton::before,
+  .unitButton::after,
+  .unitButton.isPressed::before,
+  .unitButton.isPressed::after {
+    display: none;
   }
 }
