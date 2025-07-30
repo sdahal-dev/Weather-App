@@ -250,11 +250,11 @@ button.unitButton.isPressed {
     width: 80vw;
   }
   .hi {
-    max-width: max-content;
+    width: max-content;
   }
   .card {
     padding: 10px;
-    max-width: max-content;
+    width: max-content;
     text-align: center;
   }
   .weatherDisplay {
@@ -268,6 +268,6 @@ button.unitButton.isPressed {
   .unitButton {
     margin: 1rem 0;
     width: 50vw;
-    max-width: max-content;
+    text-align: center;
   }
 }
