@@ -78,72 +78,32 @@ function displayWeather(data) {
 
   cityDisplay.textContent = city;
 
-  tempCelsius = `${Math.round(temp - 273.15)}°C`;
-  tempFahrenheit = `${Math.floor(((temp - 273.15) * 9) / 5 + 32)}°F`;
-  tempKelvin = `${Math.round(temp)}K`;
-  if (isUnitPressed) {
-    switch (selectedUnit) {
-      case "Celsius":
-        tempDisplay.textContent = tempCelsius;
-        humidityDisplay.textContent = `Humidity: ${humidity}%`;
-        descriptionDisplay.textContent =
-          description.charAt(0).toUpperCase() + description.slice(1);
-        weatherEmoji.textContent = getWeatherEmoji(id);
+  const unitTypes = {
+    Celsius: `${Math.round(temp - 273.15)}°C`,
+    Fahrenheit: `${Math.floor(((temp - 273.15) * 9) / 5 + 32)}°F`,
+    Kelvin: `${Math.round(temp)}K`,
+  };
 
-        cityDisplay.classList.add("cityDisplay");
-        tempDisplay.classList.add("tempDisplay");
-        humidityDisplay.classList.add("humidityDisplay");
-        descriptionDisplay.classList.add("descripitionDisplay");
-        weatherEmoji.classList.add("weatherEmoji");
-
-        card.appendChild(cityDisplay);
-        card.appendChild(tempDisplay);
-        card.appendChild(humidityDisplay);
-        card.appendChild(descriptionDisplay);
-        card.appendChild(weatherEmoji);
-
-        break;
-      case "Fahrenheit":
-        tempDisplay.textContent = tempFahrenheit;
-        humidityDisplay.textContent = `Humidity: ${humidity}%`;
-        descriptionDisplay.textContent =
-          description.charAt(0).toUpperCase() + description.slice(1);
-        weatherEmoji.textContent = getWeatherEmoji(id);
-
-        cityDisplay.classList.add("cityDisplay");
-        tempDisplay.classList.add("tempDisplay");
-        humidityDisplay.classList.add("humidityDisplay");
-        descriptionDisplay.classList.add("descripitionDisplay");
-        weatherEmoji.classList.add("weatherEmoji");
-
-        card.appendChild(cityDisplay);
-        card.appendChild(tempDisplay);
-        card.appendChild(humidityDisplay);
-        card.appendChild(descriptionDisplay);
-        card.appendChild(weatherEmoji);
-        break;
-      case "Kelvin":
-        tempDisplay.textContent = tempKelvin;
-        humidityDisplay.textContent = `Humidity: ${humidity}%`;
-        descriptionDisplay.textContent =
-          description.charAt(0).toUpperCase() + description.slice(1);
-        weatherEmoji.textContent = getWeatherEmoji(id);
-
-        cityDisplay.classList.add("cityDisplay");
-        tempDisplay.classList.add("tempDisplay");
-        humidityDisplay.classList.add("humidityDisplay");
-        descriptionDisplay.classList.add("descripitionDisplay");
-        weatherEmoji.classList.add("weatherEmoji");
-
-        card.appendChild(cityDisplay);
-        card.appendChild(tempDisplay);
-        card.appendChild(humidityDisplay);
-        card.appendChild(descriptionDisplay);
-        card.appendChild(weatherEmoji);
-        break;
-    }
-  } else {
+  if (!isUnitPressed || !selectedUnit) {
     displayError("Please select a unit");
+  } else {
+    tempDisplay.textContent = unitTypes[selectedUnit];
+    humidityDisplay.textContent = `Humidity: ${humidity}%`;
+    descriptionDisplay.textContent =
+      description.charAt(0).toUpperCase() + description.slice(1);
+    weatherEmoji.textContent = getWeatherEmoji(id);
+
+    cityDisplay.classList.add("cityDisplay");
+    tempDisplay.classList.add("tempDisplay");
+    humidityDisplay.classList.add("humidityDisplay");
+    descriptionDisplay.classList.add("descripitionDisplay");
+    weatherEmoji.classList.add("weatherEmoji");
+
+    card.appendChild(cityDisplay);
+    card.appendChild(tempDisplay);
+    card.appendChild(humidityDisplay);
+    card.appendChild(descriptionDisplay);
+    card.appendChild(weatherEmoji);
   }
 }
 

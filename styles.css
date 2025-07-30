@@ -271,3 +271,16 @@ button.unitButton.isPressed {
     text-align: center;
   }
 }
+
+@media (hover: none) {
+  .hi:hover,
+  .unitButton:hover {
+    transform: none;
+    filter: none;
+  }
+
+  .unitButton:hover::before,
+  .unitButton:hover::after {
+    animation-play-state: running;
+  }
+}
