@@ -1,6 +1,6 @@
 # 🌤️ Weather App
 
-A sleek and minimal weather app built using HTML, CSS, and JavaScript. This project was created by following a [Bro Code tutorial](https://www.youtube.com/@BroCodez), with some personal styling and structural tweaks added along the way.
+A sleek and minimal weather app built using HTML, CSS, and JavaScript. This project was created by following a [Bro Code tutorial](https://www.youtube.com/@BroCodez), with some personal styling, structural tweaks, and some extra features added along the way.
 
 ## 🚀 Features
 
